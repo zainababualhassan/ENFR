@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English to French Translation</title>
+</head>
+<body>
+    <form class="form-inline" action="/translate" method = "get" enctype="text/plain">
+      <label for="eng">English Sentence:</label>
+      <input type="text" id="eng" name="eng"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+      <label for="fr">French Translation:</label>
+      <input type="text" id="fr" name="fr" value="{{fr}}" readonly><br><br>
+        <p id="pp"></p>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      document.getElementById("eng").value = urlParams.get('eng');
+
+    </script>
+</body>
+</html>
