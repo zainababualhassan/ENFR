@@ -7,8 +7,9 @@ COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 COPY model/ ./model
+COPY templates/ ./templates
 COPY . ./
 
 EXPOSE 5000
 ENV PYTHONPATH /translator
-CMD python3 /translator/main.py
+CMD python3 /translator/app.py

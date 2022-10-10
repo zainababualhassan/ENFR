@@ -1,5 +1,6 @@
 # load Flask
 from flask import Flask, render_template, request, jsonify
+import tensorflow as tf
 from keras.models import load_model
 from keras_preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
@@ -39,7 +40,7 @@ english_tokenizer = Tokenizer(num_words=200)
 french_tokenizer = Tokenizer(num_words=323)
 
 app = Flask(__name__)
-model = load_model('model.h5')
+model = load_model('model/model.h5')
 
 
 # define a predict function as an endpoint
